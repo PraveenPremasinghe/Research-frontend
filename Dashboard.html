@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Babycare App Dashboard</title>
+
+    <!-- Link External file -->
+    <link rel="stylesheet" href="Dashboard_css.css" />
+    <link
+      rel="shortcut icon"
+      href="Assests/images/fevlogo.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css"
+    />
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+  </head>
+
+  <body>
+    <header class="header" id="header">
+      <nav class="navbar">
+        <a href="Dashboard.html">
+          <div class="comlogo">
+            <img class="logo" src="Assests\images\logo.png" alt="logo" />
+          </div>
+        </a>
+        <div class="mobileheder">
+          <div class="row">
+            <div class="col-6">
+              <a href="/home">
+                <img
+                  class="logo"
+                  src="Assests\images\logo.png"
+                  alt="logo"
+                  width="100%"
+                />
+              </a>
+            </div>
+            <div class="col-6">
+              <a href="/home">
+                <div class="Notification">
+                  <div class="Notification_icon">
+                    <img
+                      class="circular--profile"
+                      src="Assests/images/profile04.png"
+                    />
+                  </div>
+                  <div class="Card_message">
+                    <div class="Profile_name">David Willy</div>
+                    <div class="Message">Admin</div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="menu" id="menu">
+          <ul class="menu-list">
+            <li class="menu-item">
+              <a href="/chat" class="menu-link is-active">
+                <span
+                  class="iconify-inline menu-icon"
+                  data-icon="clarity:chat-bubble-outline-badged"
+                  data-width="25"
+                ></span>
+                <span class="menu-name">
+                  <span
+                    class="iconify-inline deskicon"
+                    data-icon="clarity:chat-bubble-outline-badged"
+                  ></span
+                  >&nbsp; Virtual Assistant
+                </span>
+              </a>
+            </li>
+
+            <li class="menu-item">
+              <a href="/threat" class="menu-link">
+                <span
+                  class="iconify-inline menu-icon"
+                  data-icon="fluent:live-24-filled"
+                  data-width="25"
+                ></span>
+                <span class="menu-name"
+                  ><span
+                    class="iconify-inline deskicon"
+                    data-icon="fluent:live-24-filled"
+                  ></span>
+                  &nbsp; Threat Detecter</span
+                >
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="/classification" class="menu-link">
+                <span
+                  class="iconify-inline menu-icon"
+                  data-icon="iconoir:voice-circled"
+                  data-width="25"
+                ></span>
+                <span class="menu-name"
+                  ><span
+                    class="iconify-inline deskicon"
+                    data-icon="iconoir:voice-circled"
+                  ></span>
+                  &nbsp; Voice Classification</span
+                >
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="/volume" class="menu-link">
+                <span
+                  class="iconify-inline menu-icon"
+                  data-icon="game-icons:night-sleep"
+                  data-width="25"
+                ></span>
+                <span class="menu-name"
+                  ><span
+                    class="iconify-inline deskicon"
+                    data-icon="game-icons:night-sleep"
+                  ></span>
+                  &nbsp; Volume Detecter
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Mobile_Menu -->
+        <a href="/home">
+          <div class="comlogo">
+            <div class="Notification">
+              <div class="Notification_icon">
+                <img
+                  class="circular--profile"
+                  src="Assests/images/profile04.png"
+                />
+              </div>
+              <div class="Card_message">
+                <div class="Profile_name">David Willy</div>
+                <div class="Message">Admin</div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </nav>
+    </header>
+    <div class="titlebar">
+      <div class="container-p">Good Afternoon , Parveen</div>
+      <div class="subtitle">Have nice day</div>
+    </div>
+
+    <div class="flex-container">
+      <div class="flex-item-left">
+        <div class="container-p">
+          <div class="mainbackground">
+            <!-- Show Virtual Assistant section -->
+            <div class="div" id="showchatc" style="display: none">
+              <div class="titlebar">Chat Bot</div>
+              <div class="subtitle">Ask me anything you want!</div>
+              <form action="chat" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                  <input
+                    name="msg"
+                    type="text"
+                    class="form-control"
+                    placeholder="Your Message"
+                    required="required"
+                  />
+                </div>
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary btn-block">
+                    Send
+                  </button>
+                </div>
+              </form>
+              <h5>{{data}}</h5>
+            </div>
+            <!-- Show Virtual Assistant section -->
+
+            <!-- Show Voice Classification section -->
+            <div class="div" id="Classification" style="display: none">
+               <div class="titlebar">I'm Listening</div>
+               <div class="subtitle"></div>
+               </div>
+            <!-- Show Voice Classification section -->
+
+            <!-- Show Suspicious Object Detecter section -->
+            <div class="div" id="Suspicious" style="display: none">
+               <div class="titlebar">Live Video</div>
+               <div class="subtitle">Live Camera is Online</div>
+               </div>
+            <!-- Show Suspicious Object Detecter section -->
+
+
+            <!-- Show Smart Sleep Detection section -->
+            <div class="div" id="AnalyzingVoice" style="display: none">
+               <div class="titlebar">Analyzing Voice Level</div>
+               <div class="subtitle">Smart Sleep Detection is Online</div>
+               <center>
+                  <img src="{{ url_for('static', filename='images/voice.gif') }}" style="width:200px;height:200px;">
+              </center>
+          <h3 class="card-title text-center">{{data}}</h3>
+               </div>
+            <!-- Show Smart Sleep Detection section -->
+         
+
+            <div class="row">
+              <div class="col-12">
+                <div class="row">
+                  <div class="col-xl-6 col-lg-12">
+                    <div class="card-view">
+                      <a href="/chat">
+                        <div
+                          class="card-header catmenu-link"
+                          onclick="showChat()"
+                        >
+                          <span
+                            class="iconify-inline menu-icon"
+                            data-icon="clarity:chat-bubble-outline-badged"
+                            data-width="25"
+                          ></span>
+                          <span class="catmenu-name"
+                            ><span
+                              class="iconify-inline deskicon"
+                              data-icon="clarity:chat-bubble-outline-badged"
+                            ></span>
+                            &nbsp; Virtual Assistant</span
+                          >
+                          <div class="card-header-work">
+                            Assistant is online
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="col-xl-6 col-lg-12">
+                    <div class="card-view">
+                      <a href="/threat">
+                        <div class="card-header catmenu-link" onclick="showSuspicious()">
+                          <span
+                            class="iconify-inline menu-icon"
+                            data-icon="fluent:live-20-filled"
+                            data-width="25"
+                          ></span>
+                          <span class="catmenu-name"
+                            ><span
+                              class="iconify-inline deskicon"
+                              data-icon="fluent:live-24-filled"
+                            ></span>
+                            &nbsp; Suspicious Object Detecter</span
+                          >
+                          <div class="card-header-work">
+                            Live Camera is Online
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12">
+                <div class="row">
+                  <div class="col-xl-6 col-lg-12">
+                    <div class="card-view">
+                      <a href="/classification">
+                        <div class="card-header catmenu-link"  onclick="showClassification()">
+                          <span
+                            class="iconify-inline menu-icon"
+                            data-icon="iconoir:voice-circled"
+                            data-width="25"
+                          ></span>
+                          <span class="catmenu-name"
+                            ><span
+                              class="iconify-inline deskicon"
+                              data-icon="iconoir:voice-circled"
+                            ></span>
+                            &nbsp; Voice Classification</span
+                          >
+                          <div class="card-header-work">
+                            Voice Classification is online
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="col-xl-6 col-lg-12">
+                    <div class="card-view">
+                      <a href="/volume">
+                        <div class="card-header catmenu-link"  onclick="showAnalyzingVoice()">
+                          <span
+                            class="iconify-inline menu-icon"
+                            data-icon="game-icons:night-sleep"
+                            data-width="25"
+                          ></span>
+                          <span class="catmenu-name"
+                            ><span
+                              class="iconify-inline deskicon"
+                              data-icon="game-icons:night-sleep"
+                            ></span>
+                            &nbsp; Smart Sleep Detection
+                          </span>
+                          <div class="card-header-work">
+                            Smart Sleep Detection is Online
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-item-right">
+        <div class="col">
+          <div class="card-view">
+            <div class="card-header">
+              <div class="row">
+                <div class="col">
+                  <div class="card-name">Today Weather</div>
+                </div>
+              </div>
+              <hr />
+              fgfgfg
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script src="Dashboard_js.js"></script>
+
+    <!-- Show item section js-->
+    <script>
+      function showChat() {
+        document.getElementById("showchatc").style.display = "block";
+      }
+
+      function showClassification() {
+        document.getElementById("Classification").style.display = "block";
+      }
+
+      function showSuspicious() {
+        document.getElementById("Suspicious").style.display = "block";
+      }
+
+      function showAnalyzingVoice() {
+        document.getElementById("AnalyzingVoice").style.display = "block";
+      }
+      
+    </script>
+
+    <script></script>
+  </body>
+</html>
